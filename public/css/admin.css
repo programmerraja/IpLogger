@@ -1,0 +1,217 @@
+body
+{
+	margin: 0;
+    color: white;
+    background-color:#40ff40;
+  
+}
+
+.link-img,
+.copy-img
+{
+	height: 30px;
+	width: 30px;
+	align-self: flex-start;
+	margin-bottom: -33px
+}
+.heading_container
+{
+	    display: flex;
+    	width: 55%;
+}
+.copy-img
+{
+	height: 25px;
+	align-self: flex-end;
+    width: 25px;
+    border-radius: 10px;
+    margin-right: 2px;
+}
+.copy-img:hover
+{
+	cursor: pointer;
+	background-color: white;
+}
+.logo
+{
+	height: 30px;
+	width: 30px;	
+}
+.nav,
+.heading
+{
+	display: flex;
+    align-items: center;
+	background-color: black;
+    margin: 0;
+    height: 50px;
+}
+.nav-brand
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+}
+.nav-center
+{
+	margin: auto;
+}
+.logout 
+{
+	margin-right: 30px;
+}
+.logout a
+{
+	color: white;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: bold;
+}
+.logout a:hover
+{
+	color: blue;
+}
+.hero
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 65px;
+}
+.hero-img
+{
+	width: 35px;
+	height:35px;
+}
+.form
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 20px auto;
+	width: 290px;
+	border: 1px solid;
+	align-items: center;
+	border-radius: 15px;
+	background: #000000de;
+	color: white;
+}
+.location--icon
+{
+	position: absolute;
+	top: -10px;
+}
+.victimname
+{
+margin: 29px;
+border: 1px solid;
+padding: 5px;
+height: 26px;
+width: 85%;
+outline: none;
+font-size: 1rem;
+border-radius: 7px;
+}
+.link
+{
+    padding: 5px;
+    height: 26px;
+    width: 77%;
+    font-size: 1rem;
+    border-radius: 0;
+    align-self: flex-start;
+    border: 0;
+    margin-left: 28px;
+    border-bottom: 1px solid white;
+    background-color: #00000000;
+    outline: none;
+    color: white;
+}
+.getlink
+{
+	margin: 10px;
+	border: 0;
+    border-radius: 7px;
+    width: 90%;
+    background-color:#40ff40;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 35px;
+    outline: none;
+}
+.getlink:hover
+{
+	cursor: pointer;
+	background-color: #00f300;
+}
+
+.victimno
+{
+	display: flex;
+	justify-content: center;
+}
+.cards
+{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+    background-color: #40ff40;
+    padding: 36px;
+}	
+.card
+{
+	color: white;
+	width: 330px;	
+    margin: 40px 0px;
+    border-radius: 10px;
+}
+.card .body
+{
+	background-color: black;
+	border-radius: 18px;
+}
+.card .body:hover
+{
+	    box-shadow: 6px 6px 9px 5px #80808094;
+}
+.card-img
+{
+	display:flex;
+	justify-content: center
+}
+.value
+{
+	padding: 10px;
+}
+.footer
+{
+	text-align: right;
+	margin: -50px 20px;
+}
+.remove-icon
+{
+    height: 35px;
+	width: 35px;
+ 	border-radius: 10px;
+ 	background-color: white;
+
+}
+.remove-icon:hover
+{
+	cursor: pointer;
+	background: #ff8b67;
+}
+.list
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.list_item
+{
+	list-style: none;
+	margin: 10px;
+}

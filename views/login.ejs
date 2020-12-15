@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="public/css/login.css">
+  	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0">
+
+</head>
+
+<body>
+  <div class="nav">
+  	<div class="nav-brand">
+  		<img src="/public/img/log-format.png" class="logo"/>
+  		<h4>IpLogger</h4>
+  	</div>
+  	<!-- <div class="heading_container">
+  			<h3 class="heading">Admin Login</h3>
+  	</div> -->
+  </div>
+
+  	<div class="hero">
+  		<img src="/public/img/admin.png" class="hero-img">
+  	</div>
+	<div class="error_msg"><span><%=error_msg%></span></div>
+
+	<div class="container">
+		<div class="form__container">
+			<form class="form" action="/admin" method="post">
+				<div class="name__container">
+					<label for="name">Name</label>
+					<input type="text" name="name" required="true">
+				</div>
+				<div class="password__container">		
+					<label for="password">password</label>
+					<input type="password" name="password" required="true">
+				</div>
+				<div class="login__container">
+					<input type="submit" name="login" value="Log In" id="login">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>  
+</html>

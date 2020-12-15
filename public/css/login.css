@@ -1,0 +1,115 @@
+body
+{
+	margin: 0;
+	background-color:#40ff40;
+  
+}
+.logo
+{
+	height: 30px;
+	width: 30px;	
+}
+.heading_container
+{
+	    display: flex;
+    	width: 55%;
+}
+.nav
+{
+	display: flex;
+    align-items: center;
+	background-color: black;
+	color: white;
+    margin: 0;
+    height: 50px;
+}
+.heading
+{
+  	text-align: center;
+}
+.nav-brand
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+}
+.nav-center
+{
+	margin: auto;
+}
+
+.hero
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 65px;
+}
+.hero-img
+{
+	width: 35px;
+	height:35px;
+}
+.error_msg
+{
+	text-align: center;
+    color: red;
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+.form__container
+{
+	background-color: #f6f8fa;
+	width: 300px;
+	height: 300px;
+	border: 1px solid white;
+	border-radius: 10px;
+	box-shadow:2px 1px 3px 3px grey;
+}
+.form
+{
+	margin: 50px 0px
+}
+label
+{
+	font-size: 20px;
+}
+.name__container,
+.password__container,
+.login__container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+.login__container
+{
+	margin: 40px 10px;
+	width: 90%;
+}
+.login__container input
+{
+	background-color:#2ea44f;
+	color: white;
+	height: 35px;
+}
+input
+{
+	background-color: rgb(232,240,254);
+	border-radius: 10px;
+    border: 2px;
+    height: 30px;
+    width: 90%;
+    outline: none;
+    font-size: 1.3rem;
+}
+#login:hover
+{
+	background-color: #05de42fa;
+}

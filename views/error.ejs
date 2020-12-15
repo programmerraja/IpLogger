@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>No internet</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width,intial-scale=1.0">
+</head>
+<style type="text/css">
+  h1
+  {
+    margin: 0;
+  }
+  img
+  {
+      height: 100px;
+      width: 100px;
+  }
+.container
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    margin: auto;
+  }
+  @media (max-width:480px)
+  {
+    body
+    {
+      font-size: 15px;
+    }
+    h1
+    {
+      font-size: 17px;
+    }
+     img
+    {
+      height: 70px;
+      width: 70px;
+    }
+    .container
+    {
+      margin: 0;
+      width: 100%;
+    }
+  }
+</style>
+<body>
+    <div class="container">  
+        <img src="/public/img/dino.png">
+        <h1 class="heading">
+          No internet       
+        </h1>
+      <div class="description">
+        <p>Try:</p>
+          <ul>
+            <li>Checking the network cables, modem, and router</li>
+            <li>Reconnecting to Wi-Fi</li>
+          </ul>          
+      </div>
+          <div class="error-code"><p>ERR_INTERNET_DISCONNECTED<p></div>
+    </div>
+</body>
+</html>
+
+
+               

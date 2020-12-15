@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IP Logger</title>
+	 <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<style type="text/css">
+body
+{
+	margin: 0;
+    
+}
+.login_container
+{
+	    display: flex;
+    	width: 55%;
+}
+.logo
+{
+	height: 30px;
+	width: 30px;	
+}
+.nav,
+.login
+{
+	display: flex;
+    align-items: center;
+	background-color: black;
+	color: white;
+    margin: 0;
+    height: 50px;
+}
+.login
+{
+	    margin-left: auto;
+    	margin-right: 20px;
+    	text-decoration: none;
+    	color: white;
+}
+.login:hover
+{
+	color: blue;
+}
+.nav-brand
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+}
+.nav-center
+{
+	margin: auto;
+}
+.hero__container
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+.hero__text
+{
+
+	color: #002d6d;
+	background-color: white;
+	position: absolute;
+    left: 50%;
+}
+.hero__img img
+{
+	width: 100vw;
+	height: 100vh;	
+}
+</style>
+<body>
+	<div class="nav">
+	  	<div class="nav-brand">
+	  		<img src="/public/img/log-format.png" class="logo"/>
+	  		<h4>IpLogger</h4>
+	  	</div>
+	  	<div class="login_container">
+	  			<a class="login" href="/login">Login</a>
+	  	</div>	
+  </div>
+  <div class="hero__container">
+    <div class="hero__img">
+  				<img src="./public/img/hero.png">  			
+  	</div>
+  </div>
+</body>
+</html>
