@@ -24,6 +24,7 @@ async function postHandler(req,res)
 	if(req.body)
 	{
 		let {name ,password}=req.body;
+		console.log(name,password,process.env.USERNAME,process.env.PASSWORD,process.env.DBURL);
 		if(name=== process.env.USERNAME && password===process.env.PASSWORD)
 		{
 				req.app.locals.isAuth=true;
