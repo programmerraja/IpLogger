@@ -8,7 +8,7 @@ const dbConnect=require("../dbconnect");
 const router= express.Router();
 
 router.post("/link",generateLink);
-F
+
 router.post("/remove",removeVictim);
 
 router.get("/get",getVictim);
