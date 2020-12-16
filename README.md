@@ -38,3 +38,13 @@ and the link in format of https://domain.com/token/?:token by using token only t
 
 # website preview
 
+# Home page
+![preview1](img/preview1.png)
+ 
+# Login page
+ 
+![preview2](img/preview2.png)
+  
+# Admin page
+  
+![preview3](img/preview3.png)
