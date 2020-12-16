@@ -35,6 +35,15 @@ and the link in format of https://domain.com/token/?:token by using token only t
 </ul>
 
 
+# How to run 
+
+<ul>
+  <li>Clone this repo</li>
+  <li>cd IpLogger</li>
+  <li>npm install</li>
+  <li> add DBURL and USERNAME and PASSWORD in .env file </li>
+  <li>npm start</li>
+</ul>
 
 # website preview
 
