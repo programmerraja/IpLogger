@@ -1,14 +1,3 @@
-// to do 
-// []create home page
-// [x]make error page look similar
-// [x]handling error
-// [x]add meta tag
-// []add loging 
-// []add auth
-// []
-
-
-
 
 //node modules
 const express=require("express");
@@ -69,6 +58,6 @@ process.on("uncaughtException",()=>{
 	
 
 })
-app.listen(port,"192.168.42.68",()=>{console.log("server started")});
+app.listen(port,()=>{console.log("server started")});
 
 
