@@ -51,7 +51,7 @@ let schema=new mongoose.Schema(
 									cdate:{
 										type:Date,
 										default:new Date()
-									}
+									},
 									date:{
 										type:Date,
 									}
