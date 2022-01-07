@@ -47,11 +47,11 @@ let schema=new mongoose.Schema(
 									browser:
 									{
 										type:String									
-									}
+									},
 									cdate:{
 										type:Date,
 										default:new Date()
-									},
+									},	
 									date:{
 										type:Date,
 									}
