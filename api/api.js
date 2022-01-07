@@ -62,7 +62,7 @@ async function removeVictim(req,res)
 	if(req.app.locals.isAuth)
 	{
 		let {token}=req.body;
-		victimmodel.deleteOne({token:token},()=>{
+		victimmodel.deleteOne({tokens:token},()=>{
 											 	res.json({"status":"Sucess"});
 										 	})
 										 .catch((err)=>{res.json({"status":"Failed",msg:err.message});});
